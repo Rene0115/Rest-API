@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import databaseConfig from '../config/database.config.js';
 import errorMiddleware from './error.middleware.js';
+import bodyParser from 'body-parser';
 
 
 const middleware = (app) => {
@@ -11,6 +12,9 @@ const middleware = (app) => {
     app.use(morgan('dev'));
     app.use(cors());
     app.use(errorMiddleware);
+    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(express.static('public'));
+
 };
 
 export  default middleware;

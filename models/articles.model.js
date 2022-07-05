@@ -1,8 +1,20 @@
 import mongoose from "mongoose";
 
 const article =  new mongoose. Schema({
-   titles: String,
-   content: String 
-}, { timestamps: true });
+   title:{ 
+      type: 'String',
+      required: true,
+      minlength: 7
+   },
+   content: {
+      type: 'String',
+      required: true,
+      minlength: 7}
+}, 
+{ timestamps: true });
 
 export const Article = mongoose.model('Article', article);
+
+export default {
+   Article
+};
