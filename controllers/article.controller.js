@@ -5,14 +5,17 @@ import _ from 'lodash'
 
 class articleController {   
     async create(req, res){  //post
-    const data = { title: req.body.title, content: req.body.email};  
+    const data = { title: req.body.title, content: req.body.content};  
     const articles = await articlesServices.create(data);
     if (_.isEmpty(data)){
       return res.status(400).send({
         success: false,
         message: 'Cannot create empty article'
       });
-    }
+    } return res.send({
+        success: true,
+        data: articles
+    })
 }
     async getAllarticles(req, res){  // get
     const findAllarticles = await Article.find()
