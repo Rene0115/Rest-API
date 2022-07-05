@@ -1,6 +1,8 @@
-import articlesServices from "../services/articles.services";
-import { Article } from "../models/articles.model";
+import articlesServices from "../services/articles.services.js";
+import { Article } from "../models/articles.model.js";
 import _ from 'lodash'
+
+
 class articleController {   
     async create(req, res){  //post
     const data = { title: req.body.title, content: req.body.email};  

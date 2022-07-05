@@ -1,4 +1,4 @@
-import {Article} from "../models/articlesModel.model.js";
+import {Article} from "../models/articles.model.js";
 
 class articleService {
     async getAllArticle (data){
