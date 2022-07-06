@@ -9,6 +9,10 @@ return articles;
     const newArticle = await Article.create(data);
     return newArticle;   
 };
+    async deleteAllarticles (data){
+        const newArticle = await Article.deleteMany(data);
+        return newArticle;
+    } 
 };
 
 export default new articleService();

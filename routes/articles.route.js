@@ -5,4 +5,5 @@ const articleRoute = express.Router();
 articleRoute.get('/', articleController.getAllarticles);
 articleRoute.post('/articles', articleController.create);
 
+
 export default articleRoute;
